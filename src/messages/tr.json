@@ -1,0 +1,161 @@
+{
+  "app": {
+    "name": "Uplide Admin",
+    "tagline": "E-Commerce Yönetim Paneli"
+  },
+  "nav": {
+    "dashboard": "Pano",
+    "products": "Ürünler",
+    "customers": "Müşteriler",
+    "logout": "Çıkış Yap"
+  },
+  "breadcrumb": {
+    "home": "Ana Sayfa",
+    "dashboard": "Pano",
+    "products": "Ürünler",
+    "customers": "Müşteriler",
+    "new": "Yeni",
+    "edit": "Düzenle"
+  },
+  "header": {
+    "themeLight": "Açık tema",
+    "themeDark": "Koyu tema",
+    "locale": "Dil",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat"
+  },
+  "auth": {
+    "loginTitle": "Yönetici Girişi",
+    "loginSubtitle": "Devam etmek için hesabınıza giriş yapın",
+    "email": "E-posta",
+    "password": "Şifre",
+    "submit": "Giriş Yap",
+    "loading": "Giriş yapılıyor...",
+    "errorInvalid": "E-posta veya şifre hatalı",
+    "errorRequired": "Bu alan zorunludur",
+    "errorEmail": "Geçerli bir e-posta giriniz",
+    "errorPasswordMin": "Şifre en az 6 karakter olmalı"
+  },
+  "dashboard": {
+    "title": "Pano",
+    "stats": {
+      "totalProducts": "Toplam Ürün",
+      "totalCustomers": "Toplam Müşteri",
+      "activeProducts": "Aktif Ürün",
+      "lowStock": "Düşük Stok"
+    },
+    "recentProducts": "Son Eklenen Ürünler",
+    "viewAll": "Tümünü Gör",
+    "noData": "Veri yok"
+  },
+  "products": {
+    "title": "Ürünler",
+    "new": "Yeni Ürün",
+    "edit": "Ürünü Düzenle",
+    "search": "Ürün ara...",
+    "filterCategory": "Kategori",
+    "filterStatus": "Durum",
+    "filterAll": "Tümü",
+    "sort": "Sırala",
+    "sortNameAsc": "İsim (A-Z)",
+    "sortNameDesc": "İsim (Z-A)",
+    "sortPriceAsc": "Fiyat (artan)",
+    "sortPriceDesc": "Fiyat (azalan)",
+    "sortStockAsc": "Stok (artan)",
+    "sortStockDesc": "Stok (azalan)",
+    "table": {
+      "image": "Görsel",
+      "name": "İsim",
+      "category": "Kategori",
+      "price": "Fiyat",
+      "stock": "Stok",
+      "status": "Durum",
+      "actions": "İşlemler"
+    },
+    "form": {
+      "nameTr": "İsim (Türkçe)",
+      "nameEn": "İsim (İngilizce)",
+      "descriptionTr": "Açıklama (Türkçe)",
+      "descriptionEn": "Açıklama (İngilizce)",
+      "category": "Kategori",
+      "price": "Fiyat (₺)",
+      "stock": "Stok",
+      "status": "Durum",
+      "imageUrl": "Görsel URL",
+      "submitCreate": "Ürünü Oluştur",
+      "submitUpdate": "Değişiklikleri Kaydet",
+      "saving": "Kaydediliyor..."
+    },
+    "status": {
+      "active": "Aktif",
+      "draft": "Taslak",
+      "archived": "Arşiv"
+    },
+    "empty": "Henüz ürün yok",
+    "deleted": "Ürün silindi",
+    "created": "Ürün oluşturuldu",
+    "updated": "Ürün güncellendi",
+    "deleteConfirm": "Bu ürünü silmek istediğinize emin misiniz?",
+    "delete": "Sil",
+    "cancel": "Vazgeç"
+  },
+  "customers": {
+    "title": "Müşteriler",
+    "new": "Yeni Müşteri",
+    "edit": "Müşteriyi Düzenle",
+    "search": "Müşteri ara...",
+    "table": {
+      "name": "İsim",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "city": "Şehir",
+      "status": "Durum",
+      "totalOrders": "Sipariş",
+      "actions": "İşlemler"
+    },
+    "form": {
+      "fullName": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "city": "Şehir",
+      "status": "Durum",
+      "submitCreate": "Müşteriyi Oluştur",
+      "submitUpdate": "Değişiklikleri Kaydet"
+    },
+    "status": {
+      "active": "Aktif",
+      "inactive": "Pasif"
+    },
+    "empty": "Henüz müşteri yok",
+    "deleted": "Müşteri silindi",
+    "created": "Müşteri oluşturuldu",
+    "updated": "Müşteri güncellendi",
+    "deleteConfirm": "Bu müşteriyi silmek istediğinize emin misiniz?"
+  },
+  "common": {
+    "actions": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "cancel": "Vazgeç",
+    "save": "Kaydet",
+    "create": "Oluştur",
+    "back": "Geri",
+    "loading": "Yükleniyor...",
+    "noPermission": "Bu işlemi yapma yetkiniz yok",
+    "error": "Bir hata oluştu",
+    "yes": "Evet",
+    "no": "Hayır"
+  },
+  "roles": {
+    "full_access": "Tam Yetki",
+    "reader": "Görüntüleyici"
+  },
+  "validation": {
+    "errorRequired": "Bu alan zorunludur",
+    "errorMin0": "0'dan küçük olamaz",
+    "errorInteger": "Tam sayı giriniz",
+    "errorInvalidUrl": "Geçerli bir URL giriniz",
+    "errorInvalidEmail": "Geçerli bir e-posta giriniz",
+    "errorMinLength": "Çok kısa"
+  }
+}
