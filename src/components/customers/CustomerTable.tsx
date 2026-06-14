@@ -64,7 +64,7 @@ export function CustomerTable({
   if (loading) {
     return (
       <div className="max-h-[60vh] overflow-auto [scrollbar-gutter:stable] rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]">
-        <Table>
+        <Table className="min-w-[1000px]">
           <THead>
             <TR>
               <TH className="w-1/5">{t("table.name")}</TH>
@@ -121,7 +121,7 @@ export function CustomerTable({
       ref={rootRef}
       className="max-h-[60vh] overflow-auto [scrollbar-gutter:stable] rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]"
     >
-      <Table>
+      <Table className="min-w-[1000px]">
         <THead>
           <TR>
             {onSortChange ? (

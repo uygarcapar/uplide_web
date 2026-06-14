@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
-import { Toaster } from "sonner";
 import { makeStore } from "./index";
 import { setTheme, type ThemeMode } from "./slices/uiSlice";
 import { setUser, type AuthUser } from "./slices/authSlice";
+import { ThemedToaster } from "@/components/layout/ThemedToaster";
 
 type Props = {
   children: React.ReactNode;
@@ -33,7 +33,7 @@ export function Providers({ children, initialUser, initialTheme }: Props) {
   return (
     <Provider store={store}>
       {children}
-      <Toaster richColors position="top-right" />
+      <ThemedToaster />
     </Provider>
   );
 }

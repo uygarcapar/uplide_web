@@ -23,7 +23,7 @@ export function CardHeader({ className, ...rest }: HTMLAttributes<HTMLDivElement
 }
 
 export function CardBody({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("p-4", className)} {...rest} />;
+  return <div className={cn("p-3 sm:p-4", className)} {...rest} />;
 }
 
 export function CardTitle({ className, ...rest }: HTMLAttributes<HTMLHeadingElement>) {

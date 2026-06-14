@@ -56,7 +56,7 @@ export function ProductTable({
   if (loading) {
     return (
       <div className="max-h-[60vh] overflow-auto [scrollbar-gutter:stable] rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]">
-        <Table>
+        <Table className="min-w-[800px]">
           <THead>
             <TR>
               <TH className="w-16">{t("table.image")}</TH>
@@ -113,7 +113,7 @@ export function ProductTable({
       ref={rootRef}
       className="max-h-[60vh] overflow-auto [scrollbar-gutter:stable] rounded-3xl bg-[var(--color-surface)] border border-[var(--color-border)]"
     >
-      <Table>
+      <Table className="min-w-[800px]">
         <THead>
           <TR>
             <TH className="w-16">{t("table.image")}</TH>
