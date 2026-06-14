@@ -33,7 +33,7 @@ export function Modal({ open, onClose, title, children, footer, className }: Pro
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-8"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
     >
       <div
         className="absolute inset-0 bg-black/50"
@@ -42,11 +42,11 @@ export function Modal({ open, onClose, title, children, footer, className }: Pro
       />
       <div
         className={cn(
-          "relative z-10 w-full max-w-md rounded-2xl bg-[var(--color-surface)] shadow-[var(--shadow-card)]",
+          "relative z-10 flex max-h-[90dvh] w-full max-w-md flex-col rounded-2xl bg-[var(--color-surface)] shadow-[var(--shadow-card)]",
           className,
         )}
       >
-        <div className="flex items-center justify-between p-5 pb-3">
+        <div className="flex shrink-0 items-center justify-between p-5 pb-3">
           <h2 className="text-xl font-semibold text-[var(--color-fg)]">{title}</h2>
           <button
             type="button"
@@ -57,9 +57,9 @@ export function Modal({ open, onClose, title, children, footer, className }: Pro
             <X className="h-5 w-5" />
           </button>
         </div>
-        <div className="px-6 py-1 text-sm">{children}</div>
+        <div className="flex-1 overflow-y-auto px-6 py-1 text-sm">{children}</div>
         {footer && (
-          <div className="flex items-center justify-end gap-2 px-4 py-3">
+          <div className="flex shrink-0 items-center justify-end gap-2 px-4 py-3">
             {footer}
           </div>
         )}
