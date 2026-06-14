@@ -44,12 +44,14 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-fg);
+    overscroll-behavior: none;
   }
 
   body {
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, Helvetica, Arial, sans-serif;
-    min-height: 100dvh;
+    height: 100dvh;
+    overflow: hidden;
   }
 
   /* Prevent iOS Safari zoom-on-focus for all form controls on mobile.
