@@ -14,11 +14,13 @@ export default async function PanelLayout({ children, params }: Props) {
   await requireUser(locale);
 
   return (
-    <div className="flex min-h-screen bg-[var(--color-bg)]">
+    <div className="flex h-dvh overflow-hidden bg-[var(--color-bg)]">
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col lg:pl-0">
         <Header />
-        <main className="flex-1 px-4 py-4 lg:px-6">{children}</main>
+        <main className="flex min-h-0 flex-1 flex-col overflow-hidden">
+          {children}
+        </main>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
-import { PageHeader } from "@/components/layout/PageHeader";
+import { setRequestLocale } from "next-intl/server";
 import { DashboardContent } from "./DashboardContent";
 
 type Props = {
@@ -9,11 +8,9 @@ type Props = {
 export default async function DashboardPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("dashboard");
 
   return (
-    <div>
-      <PageHeader title={t("title")} />
+    <div className="flex h-full min-h-0 flex-col">
       <DashboardContent />
     </div>
   );

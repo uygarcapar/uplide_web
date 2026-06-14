@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -26,6 +26,17 @@ export function LoginForm() {
   const locale = useLocale();
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const prevBody = document.body.style.overflow;
+    const prevHtml = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevBody;
+      document.documentElement.style.overflow = prevHtml;
+    };
+  }, []);
 
   const {
     register,

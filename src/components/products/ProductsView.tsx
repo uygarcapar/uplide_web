@@ -124,7 +124,7 @@ export function ProductsView() {
   const visible = filtered.slice(0, visibleCount);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex min-h-0 flex-1 flex-col">
       <div className="mb-4 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
         <ProductFilters value={filters} onChange={setFilters} />
         <NewProductButton />

@@ -13,7 +13,7 @@ export default async function ProductsPage({ params }: Props) {
   const t = await getTranslations("products");
 
   return (
-    <div>
+    <div className="flex h-full min-h-0 flex-col px-4 pt-4 pb-4 lg:px-6 lg:pb-6">
       <PageHeader title={t("title")} actions={<ClearHighlightButton />} />
       <ProductsView />
     </div>

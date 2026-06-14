@@ -1,6 +1,6 @@
 "use client";
 
-import { startTransition, useOptimistic } from "react";
+import { startTransition, useEffect, useOptimistic } from "react";
 import { useTranslations } from "next-intl";
 import { Boxes, LayoutDashboard, Package, Users, X } from "lucide-react";
 import { usePathname, useRouter, Link } from "@/i18n/navigation";
@@ -24,6 +24,18 @@ export function Sidebar() {
   const open = useAppSelector((s) => s.ui.sidebarOpen);
 
   const [optimisticPath, setOptimisticPath] = useOptimistic(pathname);
+
+  useEffect(() => {
+    if (!open) return;
+    const prevBody = document.body.style.overflow;
+    const prevHtml = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevBody;
+      document.documentElement.style.overflow = prevHtml;
+    };
+  }, [open]);
 
   function isActive(href: string) {
     return optimisticPath === href || optimisticPath.startsWith(`${href}/`);

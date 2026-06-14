@@ -13,6 +13,7 @@ import { ProductPhoto } from "@/components/products/ProductPhoto";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { Card, CardBody } from "@/components/ui/Card";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { Link } from "@/i18n/navigation";
@@ -33,6 +34,7 @@ const LOW_STOCK_THRESHOLD = 10;
 
 export function DashboardContent() {
   const t = useTranslations("dashboard");
+  const tNav = useTranslations("nav");
   const tCommon = useTranslations("common");
   const tProducts = useTranslations("products");
   const locale = useLocale() as "tr" | "en";
@@ -91,31 +93,35 @@ export function DashboardContent() {
   ];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
+      <div className="flex flex-col gap-6 px-4 pt-4 pb-4 lg:px-6 lg:pb-6">
+      <PageHeader title={tNav("dashboard")} className="mb-0" />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((s) => (
-          <Card key={s.label} className="relative">
-            <CardBody className="flex items-center justify-between gap-3 px-5 pt-8 pb-10">
-              <div>
-                <div className="text-sm font-medium text-[var(--color-fg-muted)]">{s.label}</div>
+          <Card key={s.label}>
+            <CardBody className="flex flex-col gap-4 px-5 pt-5 pb-4">
+              <div className="text-sm font-medium text-[var(--color-fg-muted)]">
+                {s.label}
+              </div>
+              <div className="flex items-center justify-between gap-3">
                 {products.isLoading || customers.isLoading ? (
-                  <Skeleton className="mt-2 h-8 w-20" />
+                  <Skeleton className="h-9 w-20" />
                 ) : (
-                  <div className="mt-2 text-3xl font-semibold text-[var(--color-fg)]">
+                  <div className="text-3xl font-semibold text-[var(--color-fg)]">
                     {s.value}
                   </div>
                 )}
+                <div className="text-[var(--color-fg)]">
+                  <s.icon className="h-8 w-8" />
+                </div>
               </div>
-              <div className="p-2 text-[var(--color-fg)]">
-                <s.icon className="h-9 w-9" />
-              </div>
+              <Link
+                href={s.href}
+                className="self-end text-xs font-medium text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:underline"
+              >
+                {t("viewAll")}
+              </Link>
             </CardBody>
-            <Link
-              href={s.href}
-              className="absolute bottom-3 right-4 text-xs font-medium text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] hover:underline"
-            >
-              {t("viewAll")}
-            </Link>
           </Card>
         ))}
       </div>
@@ -197,6 +203,7 @@ export function DashboardContent() {
       />
 
       <ProductFormModal />
+      </div>
     </div>
   );
 }
