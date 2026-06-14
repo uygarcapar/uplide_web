@@ -12,7 +12,7 @@ export default async function LoginPage({ params }: Props) {
   const t = await getTranslations("app");
 
   return (
-    <main className="flex min-h-dvh flex-col items-center overflow-hidden bg-[var(--color-bg)] px-4 pt-12 pb-6 sm:pt-32 sm:pb-12">
+    <main className="flex h-dvh flex-col items-center overflow-hidden bg-[var(--color-bg)] px-4 pt-12 pb-6 sm:h-auto sm:min-h-dvh sm:pt-32 sm:pb-12">
       <span
         className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border border-[var(--color-border)] bg-[var(--color-primary)] text-[var(--color-primary-fg)] sm:mb-10 sm:h-24 sm:w-24"
         aria-label={t("name")}
