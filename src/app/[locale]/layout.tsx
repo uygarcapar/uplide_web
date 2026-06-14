@@ -34,7 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const cookieStore = await cookies();
   const themeCookie = cookieStore.get("theme")?.value;
-  const initialTheme: "light" | "dark" = themeCookie === "dark" ? "dark" : "light";
+  const initialTheme: "light" | "dark" = themeCookie === "light" ? "light" : "dark";
 
   const supabase = await createSupabaseServerClient();
   const {
