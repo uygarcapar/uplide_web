@@ -9,6 +9,7 @@ type Props = {
   currentSort: string;
   onSortChange: (sort: string) => void;
   align?: "left" | "right";
+  className?: string;
   children: React.ReactNode;
 };
 
@@ -17,6 +18,7 @@ export function SortableTH({
   currentSort,
   onSortChange,
   align = "left",
+  className,
   children,
 }: Props) {
   const isAsc = currentSort === `${field}_asc`;
@@ -36,6 +38,7 @@ export function SortableTH({
       className={cn(
         "cursor-pointer select-none outline-none focus:outline-none focus-visible:outline-none hover:bg-[var(--color-surface-muted)]/60",
         align === "right" && "text-right",
+        className,
       )}
     >
       <span className="inline-flex items-center gap-1">

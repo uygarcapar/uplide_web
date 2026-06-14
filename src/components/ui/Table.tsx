@@ -2,7 +2,12 @@ import { cn } from "@/lib/utils";
 import type { HTMLAttributes, TableHTMLAttributes, ThHTMLAttributes, TdHTMLAttributes } from "react";
 
 export function Table({ className, ...rest }: TableHTMLAttributes<HTMLTableElement>) {
-  return <table className={cn("w-full text-left text-sm", className)} {...rest} />;
+  return (
+    <table
+      className={cn("w-full table-fixed text-left text-sm", className)}
+      {...rest}
+    />
+  );
 }
 
 export function THead({ className, ...rest }: HTMLAttributes<HTMLTableSectionElement>) {

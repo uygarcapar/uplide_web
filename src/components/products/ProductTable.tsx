@@ -55,17 +55,17 @@ export function ProductTable({
 
   if (loading) {
     return (
-      <div className="overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+      <div className="max-h-[60vh] overflow-auto [scrollbar-gutter:stable] rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)]">
         <Table>
           <THead>
             <TR>
               <TH className="w-16">{t("table.image")}</TH>
               <TH>{t("table.name")}</TH>
-              <TH>{t("table.category")}</TH>
-              <TH className="text-right">{t("table.price")}</TH>
-              <TH className="text-right">{t("table.stock")}</TH>
-              <TH>{t("table.status")}</TH>
-              <TH className="text-right">{tCommon("actions")}</TH>
+              <TH className="w-32">{t("table.category")}</TH>
+              <TH className="w-28 text-right">{t("table.price")}</TH>
+              <TH className="w-20 text-right">{t("table.stock")}</TH>
+              <TH className="w-28">{t("table.status")}</TH>
+              <TH className="w-24 text-right">{tCommon("actions")}</TH>
             </TR>
           </THead>
           <TBody>
@@ -111,7 +111,7 @@ export function ProductTable({
   return (
     <div
       ref={rootRef}
-      className="max-h-[60vh] overflow-auto rounded-3xl bg-[var(--color-surface)] border border-[var(--color-border)]"
+      className="max-h-[60vh] overflow-auto [scrollbar-gutter:stable] rounded-3xl bg-[var(--color-surface)] border border-[var(--color-border)]"
     >
       <Table>
         <THead>
@@ -133,11 +133,12 @@ export function ProductTable({
                 field="category"
                 currentSort={currentSort}
                 onSortChange={(s) => onSortChange(s as SortKey)}
+                className="w-32"
               >
                 {t("table.category")}
               </SortableTH>
             ) : (
-              <TH>{t("table.category")}</TH>
+              <TH className="w-32">{t("table.category")}</TH>
             )}
             {onSortChange ? (
               <SortableTH
@@ -145,11 +146,12 @@ export function ProductTable({
                 currentSort={currentSort}
                 onSortChange={(s) => onSortChange(s as SortKey)}
                 align="right"
+                className="w-28"
               >
                 {t("table.price")}
               </SortableTH>
             ) : (
-              <TH className="text-right">{t("table.price")}</TH>
+              <TH className="w-28 text-right">{t("table.price")}</TH>
             )}
             {onSortChange ? (
               <SortableTH
@@ -157,23 +159,29 @@ export function ProductTable({
                 currentSort={currentSort}
                 onSortChange={(s) => onSortChange(s as SortKey)}
                 align="right"
+                className="w-20"
               >
                 {t("table.stock")}
               </SortableTH>
             ) : (
               <TH
                 className={cn(
-                  "text-right",
+                  "w-20 text-right",
                   highlightColumn === "stock" && HIGHLIGHT_TH,
                 )}
               >
                 {t("table.stock")}
               </TH>
             )}
-            <TH className={cn(highlightColumn === "status" && HIGHLIGHT_TH)}>
+            <TH
+              className={cn(
+                "w-28",
+                highlightColumn === "status" && HIGHLIGHT_TH,
+              )}
+            >
               {t("table.status")}
             </TH>
-            <TH className="text-right">{tCommon("actions")}</TH>
+            <TH className="w-24 text-right">{tCommon("actions")}</TH>
           </TR>
         </THead>
         <TBody>
