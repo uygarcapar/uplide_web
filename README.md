@@ -57,8 +57,8 @@ pnpm install --frozen-lockfile
 
 4. Supabase Dashboard → **SQL Editor**'da `supabase/migrations/0001_initial_schema.sql` dosyasını çalıştır.
 5. Supabase Dashboard → **Authentication → Users**'tan iki kullanıcı oluştur:
-   - `admin@uplide.test` (şifreyi belirle)
-   - `reader@uplide.test` (şifreyi belirle)
+   - `admin@uplide.test` — şifre: `admin123`
+   - `reader@uplide.test` — şifre: `reader123`
 6. `supabase/seed.sql`'i SQL Editor'da çalıştır — admin'i `full_access` rolüne yükseltir, örnek ürün ve müşteri verileri ekler.
 
 ### 3. Geliştirme sunucusunu başlat
@@ -140,12 +140,10 @@ Build komutu: `pnpm build` (Vercel otomatik algılar).
 
 ## Demo Hesapları
 
-Supabase Authentication panelinden kendi belirlediğiniz şifrelerle:
-
-| Kullanıcı                  | Rol           | Yetkiler                           |
-| -------------------------- | ------------- | ---------------------------------- |
-| `admin@uplide.test`        | Full Access   | Tüm CRUD işlemleri                 |
-| `reader@uplide.test`       | Reader        | Sadece görüntüleme                 |
+| Kullanıcı                  | Şifre       | Rol           | Yetkiler                           |
+| -------------------------- | ----------- | ------------- | ---------------------------------- |
+| `admin@uplide.test`        | `admin123`  | Full Access   | Tüm CRUD işlemleri                 |
+| `reader@uplide.test`       | `reader123` | Reader        | Sadece görüntüleme                 |
 
 ## Proje Yapısı
 
