@@ -51,6 +51,9 @@
   body {
     height: 100dvh;
     overflow: hidden;
+    position: fixed;
+    inset: 0;
+    width: 100%;
   }
 
   body {
